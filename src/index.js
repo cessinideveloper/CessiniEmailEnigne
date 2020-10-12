@@ -7,9 +7,9 @@ import { HashRouter, MemoryRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.Fragment>
-    <HashRouter>
+    <MemoryRouter>
       <App></App>
-    </HashRouter>
+    </MemoryRouter>
   </React.Fragment>,
   document.getElementById('root')
 );
