@@ -3,8 +3,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 
 import './App.css';
-import SignMain from './signInPage';
-import DashBoard from './Dashboard/dashBoard';
+import SignMain from './components/signInPage';
+import DashBoard from './components/Dashboard/dashBoard';
 
 function App() {
 
