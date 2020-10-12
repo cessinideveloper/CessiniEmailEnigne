@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signmain.css';
+import './index.css';
 import SignIn from './signIn/signIn'
 import SignUp from './signup/signUp'
 import { Route, Switch } from 'react-router-dom'
