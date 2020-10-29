@@ -27,10 +27,15 @@ const SignUp = ({ setUserName }) => {
                     email: emailRef.current.value,
                     password: passRef.current.value,
                 }
+                console.log(newUser)
                 axios.post("http://emailengine2020.herokuapp.com/contactapi/users/", newUser)
-                    .then(res => console.log(res))
-                setUserName(userRef.current.value)
-                push("/")
+                    .then(res => {
+                        console.log(res)
+                        setUserName(userRef.current.value)
+                        push("/")
+                    }
+                    )
+
             } else alert("Please fill all fields")
 
         } else alert("Passwords do not match")
