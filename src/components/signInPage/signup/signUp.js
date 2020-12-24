@@ -3,7 +3,7 @@ import './signup.css';
 import { ButtonPopRightLite } from '../../../buttons';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-
+import signInStye from '../../../css_modules/sign.module.css'
 
 const SignUp = ({ setUserName }) => {
     const { push } = useHistory(null)

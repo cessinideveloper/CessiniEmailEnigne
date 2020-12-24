@@ -13,7 +13,7 @@ export const ButtonPopRightLite = forwardRef(({ breath, grow, children, expand, 
     const pop = () => {
 
         setRest({ widthfont: "100%", xfront: "0%" })
-        setRound({ round1: "10%", config: { duration: 90 } })
+        setRound({ round1: "15%", config: { duration: 90 } })
         setPusher({ width: `${breath * grow}%` })
         setTextDes({ flexGrow: grow - 1, opacity: 1 })
     }

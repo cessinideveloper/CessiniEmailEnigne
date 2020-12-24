@@ -1,21 +1,35 @@
-.signupButtons {
-  position: absolute;
-  width: 70%;
-  height: 17%;
-  /* background-color: cornflowerblue; */
-  top: 70%;
-  left: 15.7%;
+.signInBox {
+  /* width: 28%;
+  height: 75%; */
+  position: relative;
+  border-radius: 10px;
+  width: 382.4px;
+  height: 486.7px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.subSignupButtons {
+
+.inputHolder {
+  width: 80%;
+  height: 90%;
+  /* border-style: dotted; */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Recently copied to be edited */
+
+
+/* .subSignupButtons {
   background-color: rgb(42, 111, 238);
-  width: 25%;
+  width: 50%;
   height: 100%;
   font-family: Arial, sans-serif;
-}
+} */
 
 .loginTextDiv {
   font-family: "Pacifico", cursive;
@@ -34,11 +48,17 @@
   font-size: max(0.85vw, 10px);
   overflow: hidden;
 }
+/* .signElements>*{
+  border-style: dotted;
+}
+
+.signElements>*>*{
+  border-style: dotted;
+} */
 
 .loginTextDiv {
-  flex-grow: 0.5;
-  font-size: max(1.4vw, 12px);
-  color: rgb(28, 167, 209);
+  flex-grow: 0.6;
+  margin-bottom:20px;
 }
 
 .userNameDiv {
@@ -50,89 +70,33 @@
 .signUpDiv {
   display: flex;
   flex-direction: column;
-  flex-grow: 0.85;
+  flex-grow: 0.8;
+  width: 90%;
+  align-self: center;
 }
 .signUpText {
   font-family: Arial, Helvetica, sans-serif;
   font-size: max(0.85vw, 10px);
-  flex-grow: 2;
-  flex-basis: 0;
-   border-style: dotted; 
+  /* border-style: dotted; */
   color: rgb(110, 99, 99);
 }
 
 .signUpButtons {
-  flex-grow: 3;
-  /* border-style: dotted; */
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(95, 95, 95);
   font-size: max(0.85vw, 10px);
   z-index: 20;
+  height: 58%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .subSignUpDiv {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* signUpDiv */
-
-.inputSVG {
-  position: absolute;
-  z-index: 20;
-  overflow: hidden;
-}
-
-.insideInputDivs {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 90%;
-  height: 45%;
-  /* border-style: dotted; */
-  position: relative;
-  z-index: 21;
-  display: flex;
-}
-
-.inputTagHolder {
-  flex-grow: 1;
-  /* border-style: dotted; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.inputActual {
-  flex-grow: 4;
-  margin-left: 2%;
-  /* border-style: dotted; */
-}
-.inputBox {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  outline: transparent;
-  border: none;
-  color: white;
-  font-family: "Arial";
-  font-weight: 100;
-}
-/* UserNameDiv */
-
-/* UserNameDiv */
-/* passwordDiv */
-.resetPassDiv {
-  font-family: Arial, Helvetica, sans-serif;
-  flex-grow: 0.3;
-}
-.resetPassDiv > a:link {
-  text-decoration: none;
-}
-/* passwordDiv */
-
-.btnLogin {
-  width: 90%;
-  height: 70%;
 }
 
 .loginButtonDiv {
@@ -142,16 +106,49 @@
   justify-content: center;
   align-items: center;
   color: white;
+  flex-grow: 0.8;
+  width: 95%;
+  align-self: center;
 }
 .loginButtonDiv > p {
   position: absolute;
   z-index: 20;
 }
 
-.clickDetector {
-  position: relative;
-  z-index: 20;
-  width: 83%;
-  height: 50%;
+.resetPassDiv {
+  font-family: Arial, Helvetica, sans-serif;
+  flex-grow: 0.3;
+}
+.resetPassDiv > a:link {
+  text-decoration: none;
 }
 
+.signButton{
+  flex-grow: 1;
+  width: 90%;
+  height: 55%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.inputActual {
+  flex-grow: 4;
+  margin-left: 2%;
+  /* border-style: dotted; */
+}
+
+.inputActual>*{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  color: white;
+  font-family: "Arial";
+  font-weight: 100;
+}

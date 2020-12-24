@@ -31,7 +31,7 @@
 }
 
 .signElements {
-  /* border-style: dotted; */
+  border-style: dotted;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -83,30 +83,30 @@
 
 /* signUpDiv */
 
-.inputSVG {
+/* .inputSVG {
   position: absolute;
   z-index: 20;
   overflow: hidden;
-}
+} */
 
-.insideInputDivs {
+/* .insideInputDivs {
   font-family: Arial, Helvetica, sans-serif;
   width: 90%;
   height: 45%;
-  /* border-style: dotted; */
+   border-style: dotted; 
   position: relative;
   z-index: 21;
   display: flex;
-}
+} */
 
-.inputTagHolder {
+/* .inputTagHolder {
   flex-grow: 1;
-  /* border-style: dotted; */
+   border-style: dotted; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-}
+} */
 .inputActual {
   flex-grow: 4;
   /* border-style: dotted; */
@@ -125,16 +125,16 @@
 
 /* UserNameDiv */
 /* passwordDiv */
-.resetPassDiv {
+/* .resetPassDiv {
   font-family: Arial, Helvetica, sans-serif;
   flex-grow: 0.3;
 }
 .resetPassDiv > a:link {
   text-decoration: none;
-}
+} */
 /* passwordDiv */
 
-.btnLogin {
+/* .btnLogin {
   width: 90%;
   height: 70%;
 }
@@ -160,4 +160,4 @@
   align-items: center;
   position: relative;
   z-index: 20;
-}
+} */

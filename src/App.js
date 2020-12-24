@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import SignMain from './components/signInPage';
 import DashBoard from './components/Dashboard/dashBoard';
+import './css_modules/global.css'
 
 function App() {
 

@@ -2,16 +2,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
-import './signin.css';
+// import './signin.css';
 import { ButtonPopRightLite } from '../../../buttons';
 import store from '../../../store/store'
 import { storeUserRequest, getAllEmailList } from '../../../actions'
 import { useSpring, animated } from 'react-spring'
+import Logo from '../../../assets/Logo'
+import signStyle from '../../../css_modules/sign.module.css'
 
 const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
     const { push } = useHistory(null)
 
-    const [logButtonStyle, setLogButtonStyle] = useSpring(() => ({ transform: "scaleX(1)", text: "Login", backgroundColor: "#365194ff" }))
+    const [logButtonStyle, setLogButtonStyle] = useSpring(() => ({ transform: "scaleX(1)", text: "Login", backgroundColor: "#335E84" }))
     const [expand, setExpand] = useState({
         expandEmail: false, expandGoogle: false,
         expandGuest: false, expandUser: true, expandPass: true
@@ -40,7 +42,13 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
     }
 
     const login = () => {
-        setLogButtonStyle({ transform: "scaleX(1)", text: "Authorizing...", backgroundColor: "#389685ff" })
+        if (userData.username && userData.password) {
+            setLogButtonStyle({ transform: "scaleX(1)", text: "Authorizing...", backgroundColor: "#389685ff" })
+        } else {
+            setLogButtonStyle({ transform: "scaleX(1)", text: "Empty", backgroundColor: "#656565ff" })
+            return
+        }
+
         axios.post("https://emailengine2020.herokuapp.com/api-token-auth/",
             {
                 username: userData.username,
@@ -89,65 +97,12 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
     }, [])
 
     return (
-        <div className="inputHolder">
-            <div className="loginTextDiv    signElements">
-                Login
-                </div>
-            <div className="userNameDiv     signElements">
-                <svg className="inputSVG"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100%"
-                    height="100%"
-                    version="1.1"
-                    viewBox="0 0 132.131 24.137"
-                >
-                    <defs>
-                        <path d="M23.435 201.083H155.727V271.387H23.435z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <path d="M133.804 176.893H199.572V219.226H133.804z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <filter
-                            id="filter2821"
-                            width="1.053"
-                            height="1.309"
-                            x="-0.026"
-                            y="-0.155"
-                            colorInterpolationFilters="sRGB"
-                        >
-                            <feGaussianBlur stdDeviation="1.188"></feGaussianBlur>
-                        </filter>
-                    </defs>
-                    <g transform="translate(-125.17 -121.658)">
-                        <g
-                            fillOpacity="1"
-                            strokeWidth="0.029"
-                            transform="matrix(1.15734 0 0 1 -21.5 -34.309)"
-                        >
-                            <rect
-                                width="108.464"
-                                height="18.432"
-                                x="129.583"
-                                y="158.819"
-                                fill="#4d4d4d"
-                                filter="url(#filter2821)"
-                                opacity="0.764"
-                                rx="7.311"
-                                ry="6.172"
-                            ></rect>
-                            <rect
-                                width="108.464"
-                                height="18.432"
-                                x="129.583"
-                                y="158.819"
-                                fill="#1ca7d1"
-                                rx="4.101"
-                                ry="6.172"
-                            ></rect>
-                        </g>
-                    </g>
-                </svg>
-                <div className="userNameInputHolder insideInputDivs">
+        <div className={`${signStyle.inputHolder}`}>
+            <div className={`${signStyle.loginTextDiv}    ${signStyle.signElements}`}>
+                <Logo styles={{ width: "100%", height: "100%" }}></Logo>
+            </div>
+            <div className={`${signStyle.userNameDiv}     ${signStyle.signElements}`}>
+                <div className="inputDivs">
                     <ButtonPopRightLite expand={expand.expandUser}
                         title={"username"}
                         breath={12} grow={3}>
@@ -171,8 +126,8 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
                             </g>
                         </svg>
                     </ButtonPopRightLite>
-                    <div className="inputActual">
-                        <input className="userNameInput  inputBox" type="text"
+                    <div className={`${signStyle.inputActual}`}>
+                        <input type="text"
                             value={userData.username}
                             onChange={e => setUserName(e.target.value)}
                             onFocus={() => { setExpand({ ...expand, expandUser: false }) }}
@@ -182,69 +137,16 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
                     </div>
                 </div>
             </div>
-            <div className="passWordDiv     signElements">
-                <svg className="inputSVG"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="100%"
-                    height="100%"
-                    version="1.1"
-                    viewBox="0 0 132.131 24.137"
-                >
-                    <defs>
-                        <path d="M23.435 201.083H155.727V271.387H23.435z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <path d="M133.804 176.893H199.572V219.226H133.804z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <path d="M137.583 180.673H219.226V228.298H137.583z"></path>
-                        <filter
-                            id="filter2821"
-                            width="1.053"
-                            height="1.309"
-                            x="-0.026"
-                            y="-0.155"
-                            colorInterpolationFilters="sRGB"
-                        >
-                            <feGaussianBlur stdDeviation="1.188"></feGaussianBlur>
-                        </filter>
-                    </defs>
-                    <g transform="translate(-125.17 -121.658)">
-                        <g
-                            fillOpacity="1"
-                            strokeWidth="0.029"
-                            transform="matrix(1.15734 0 0 1 -21.5 -34.309)"
-                        >
-                            <rect
-                                width="108.464"
-                                height="18.432"
-                                x="129.583"
-                                y="158.819"
-                                fill="#4d4d4d"
-                                filter="url(#filter2821)"
-                                opacity="0.764"
-                                rx="7.311"
-                                ry="6.172"
-                            ></rect>
-                            <rect
-                                width="108.464"
-                                height="18.432"
-                                x="129.583"
-                                y="158.819"
-                                fill="#1ca7d1"
-                                rx="4.101"
-                                ry="6.172"
-                            ></rect>
-                        </g>
-                    </g>
-                </svg>
-                <div className="passInputHolder insideInputDivs">
+            <div className={`${signStyle.signElements}`}>
+                <div className="inputDivs">
                     <ButtonPopRightLite expand={expand.expandPass}
                         title={"password"}
                         breath={12.5} grow={3}>
                         <svg
                             style={{ flexShrink: 0, flexGrow: 1 }}
                             xmlns="http://www.w3.org/2000/svg"
-                            width="75%"
-                            height="75%"
+                            width="90%"
+                            height="85%"
                             version="1.1"
                             viewBox="-5.2 -5 93.41 93.41"
                         >
@@ -259,22 +161,21 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
                             </g>
                         </svg>
                     </ButtonPopRightLite>
-                    <div className="inputActual">
-                        <input className="userNameInput inputBox" type="password"
+                    <div className={`${signStyle.inputActual}`}>
+                        <input type="password"
                             onChange={e => setPassWord(e.target.value)}
                             onFocus={() => { setExpand({ ...expand, expandPass: false }) }}
                             onBlur={() => { setExpand({ ...expand, expandPass: true }) }}
                         ></input>
                     </div>
-
                 </div>
             </div>
-            <div className="loginButtonDiv  signElements">
-                <animated.div style={logButtonStyle} className="loginButton"
-                    onMouseEnter={() => setLogButtonStyle({ transform: "scaleX(1.1)", text: "Login", backgroundColor: "#5976c1ff" })}
+            <div className={`${signStyle.loginButtonDiv}  ${signStyle.signElements}`}>
+                <animated.div style={logButtonStyle} className={signStyle.signButton}
+                    onMouseEnter={() => setLogButtonStyle({ transform: "scaleX(1)", text: "Login", backgroundColor: "#5976c1ff" })}
                     onMouseLeave={() => {
                         if (logButtonStyle.text.value === "Login") {
-                            setLogButtonStyle({ transform: "scaleX(1)", backgroundColor: "#365194ff" })
+                            setLogButtonStyle({ transform: "scaleX(1)", backgroundColor: "#335E84" })
                         }
                     }
                     }
@@ -287,11 +188,11 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
                 >
                 </div> */}
             </div>
-            <div className="signUpDiv       signElements">
-                <div className="signUpText subSignUpDiv">
+            <div className={`${signStyle.signUpDiv}       ${signStyle.signElements}`}>
+                <div className={`${signStyle.signUpText} ${signStyle.subSignUpDiv}`}>
                     don't have an account?
                 </div>
-                <div className="signUpButtons subSignUpDiv">
+                <div className={`${signStyle.signUpButtons} ${signStyle.subSignUpDiv}`}>
                     <ButtonPopRightLite ref={emailRef} expand={expand.expandEmail}
                         title={"Sign up with Email"}
                         breath={14} grow={4.5}>
@@ -382,7 +283,7 @@ const SignIn = ({ userData, setUserName, setPassWord, setEmail, setId }) => {
                     </ButtonPopRightLite>
                 </div>
             </div>
-            < div className="resetPassDiv signElements" >
+            < div className={`${signStyle.resetPassDiv} ${signStyle.signElements}`} >
                 Forgot your password ? &nbsp; <a href=""> Reset </a>
             </div >
         </div >
