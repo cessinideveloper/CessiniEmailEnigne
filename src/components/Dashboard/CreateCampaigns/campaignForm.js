@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import store from '../../../store/store'
 import { storeCampaign } from '../../../actions'
 import axios from 'axios'
+import campStyle from '../../../css_modules/form.module.css'
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -31,7 +32,7 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
 
             </div>
             <div className="dashBodyMainCam  subWrapperCam">
-                <div className="camFormHolder">
+                <div className={`${campStyle.camFormHolder}`}>
                     <form className="formFields  Fields">
                         <div className="leftFields Fields">
                             <div className="subField Fields">
@@ -60,7 +61,7 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
                                     onChange={e => setNewCampaignData({ ...newCampaignData, senderEmail: e.target.value })}
                                 />
                             </div>
-                            <div className="subFieldLong Fields">
+                            <div className="subField Fields">
                                 <label htmlFor="emailList">Email Attachment</label>
                                 <input type="file" id="emailList"
                                     onChange={e => setNewCampaignData({ ...newCampaignData, emailAttachment: e.target.files[0] })}

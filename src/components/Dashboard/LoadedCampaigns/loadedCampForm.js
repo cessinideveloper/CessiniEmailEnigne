@@ -4,6 +4,7 @@ import store from '../../../store/store'
 import { storeCampaign, updateCampaign } from '../../../actions'
 import { useSpring, animated } from 'react-spring'
 import axios from 'axios'
+import campStyle from '../../../css_modules/form.module.css'
 
 const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, loaded, setLoaded }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -52,7 +53,7 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
 
             </div>
             <div className="dashBodyMainCam  subWrapperCam">
-                <div className="camFormHolder">
+                <div className={`${campStyle.loadedCamFormHolder}`}>
                     <form className="formFields  Fields">
                         <div className="leftFields Fields">
                             <div className="subField Fields">
@@ -81,7 +82,7 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                                     onChange={e => setNewCampaignData({ ...newCampaignData, sender_email: e.target.value })}
                                 />
                             </div>
-                            <div className="subFieldLong Fields">
+                            <div className="subField Fields">
                                 <label htmlFor="emailList">Email Attachment</label>
 
                                 <input type="file" id="emailList"
@@ -101,9 +102,9 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                                     {options}
                                 </select>
                             </div>
-                            <div className="subFieldLong Fields">
+                            <div className="subField Fields">
                                 <label htmlFor="emailBody">Email Body</label>
-                                <div id="emailBody" className="desBody Fields formButtonsCam"
+                                <div className={`${campStyle.openBodyButton}`}
                                     onClick={() => {
 
                                         push("/dashboard/loadedcamp/maileditor")
@@ -112,7 +113,7 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                                         }, 500)
                                     }}
                                 >
-                                    Deisgn Body
+                                    Open Mail Body
                             </div>
                             </div>
                         </div>

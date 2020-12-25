@@ -1,6 +1,8 @@
 :root {
     --background: #667B9E;
     --light:#EBEBEB;
+    --textGrey:#696969;
+    --textDark:#585858;
 }
 
 .wrapper {
@@ -23,6 +25,7 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
 }
 
+/* The Sign In Inputs */
 .inputDivs{
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
@@ -36,6 +39,7 @@
     padding: 6px;
 }
 
+/* Top navbar */
 .topNavCam {
     flex-grow: 0;
     flex-shrink: 0;
@@ -47,3 +51,38 @@
     align-items: center;
 }
 
+/* Form Fields */
+.subField{
+    /* border:black dotted; */
+    flex:1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.subField>*{
+    width: 80%;
+    color: var(--textGrey);
+    font-weight: 500;
+    font-size: small;
+    margin-bottom:10px ;
+}
+
+.subField>input,.subField>select{
+    height: 40px;
+    border-radius: 10px;
+    color: var(--textGrey);
+    font-weight: 700;
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.subField>div{
+    color: white;
+}

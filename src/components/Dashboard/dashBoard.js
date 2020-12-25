@@ -23,7 +23,7 @@ const DashBoard = () => {
         <div className={`coolBackground ${dashStyle.dash}`}>
             <div className="sideNavHolder subWrapper">
                 <div className="cessiniHolder  subWrapper">
-                    <Icon style={{ width: "30%", position: "relative", top: "50%" }}></Icon>
+                    <Icon style={{ width: "40%", position: "relative", top: "30%" }}></Icon>
                 </div>
                 <div className="contentHolder  subWrapper">
                     <animated.div className="MyEmailList sideButtons"

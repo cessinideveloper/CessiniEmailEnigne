@@ -1,0 +1,32 @@
+.camFormHolder{
+    width: 80%;
+    height: 70%;
+    background-color: whitesmoke;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.loadedCamFormHolder{
+    width: 80%;
+    height: 80%;
+    background-color: whitesmoke;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.openBodyButton{
+    width: 60%;
+    height: 50px;
+    background-color: #2D4F6D;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
