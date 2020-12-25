@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import { useHistory } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'
 import EmailEditor from 'react-email-editor'
-
+import Back from '../../../assets/LeftArrow'
 
 import LoadedCampForm from './loadedCampForm'
 
@@ -44,11 +44,11 @@ const LoadedCamp = () => {
             <Route path="/dashboard/loadedcamp/maileditor" render={() =>
                 <>
                     <div className="topNavCam  subWrapperCam">
-                        <div className="createCamp   topButtonsCam subWrapperCam"
+                        <div className="backButton"
                             onClick={() => push("/dashboard/loadedcamp")}
 
                         >
-                            Back
+                            <Back fill={"#ffffff"} width={"50%"} height={"50%"}></Back>
                         </div>
                         <div className="addEmailList topButtonsCam subWrapperCam"
                             onClick={() => {

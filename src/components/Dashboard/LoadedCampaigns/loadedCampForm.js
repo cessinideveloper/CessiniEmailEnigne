@@ -5,6 +5,7 @@ import { storeCampaign, updateCampaign } from '../../../actions'
 import { useSpring, animated } from 'react-spring'
 import axios from 'axios'
 import campStyle from '../../../css_modules/form.module.css'
+import Back from '../../../assets/LeftArrow'
 
 const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, loaded, setLoaded }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -42,14 +43,11 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
     return (
         <>
             <div className="topNavCam  subWrapperCam">
-                <div className="createCamp   topButtonsCam subWrapperCam"
+                <div className="backButton"
                     onClick={() => push("/dashboard")}
                 >
-                    Back
+                    <Back fill={"#ffffff"} width={"50%"} height={"50%"}></Back>
                 </div>
-                {/* <div className="addEmailList topButtonsCam subWrapperCam">
-                    <p>Save & Next</p>
-                </div> */}
 
             </div>
             <div className="dashBodyMainCam  subWrapperCam">

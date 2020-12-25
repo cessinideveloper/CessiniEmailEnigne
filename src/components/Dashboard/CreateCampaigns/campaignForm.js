@@ -4,6 +4,7 @@ import store from '../../../store/store'
 import { storeCampaign } from '../../../actions'
 import axios from 'axios'
 import campStyle from '../../../css_modules/form.module.css'
+import Back from '../../../assets/LeftArrow'
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -78,12 +79,12 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
                         </div>
                     </form>
                     <div className="formButtons Fields">
-                        <div className="sendButton Fields formButtonsCam"
+                        <div className="backButton"
                             onClick={() => {
                                 push("/dashboard")
                             }}
                         >
-                            Back{/* {update ? "Update & Send" : "Save & Send"} */}
+                            <Back fill={"#B1B1B1"} width={"50%"} height={"50%"}></Back>
                         </div>
                         <div className="createButton Fields formButtonsCam"
                             onClick={() => {

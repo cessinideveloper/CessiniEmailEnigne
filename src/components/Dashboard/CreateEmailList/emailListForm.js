@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import store from '../../../store/store'
 import { addEmailList } from '../../../actions'
+import Back from '../../../assets/LeftArrow'
 
 const EmailListForm = () => {
     const [emailListState, setEmailListState] = useState({ name: "", file: "" })
@@ -18,7 +19,7 @@ const EmailListForm = () => {
                 <div className="camFormHolderEmail">
                     <form className="formFieldsEmail  FieldsEmail">
                         <div className="subFormEmail">
-                            <div className="subFieldEmail">
+                            <div className="subField">
                                 <label htmlFor="emailName">File Name</label>
                                 <input type="text" id="emailName" name="emailName"
                                     onChange={e => setEmailListState({ ...emailListState, name: e.target.value })}
@@ -26,7 +27,7 @@ const EmailListForm = () => {
                             </div>
                         </div>
                         <div className="subFormEmail">
-                            <div className="subFieldEmail">
+                            <div className="subField">
                                 <label htmlFor="emailFile">Upload File</label>
                                 <input type="file" id="emailFile" name="emailFile"
                                     onChange={e => setEmailListState({ ...emailListState, file: e.target.files[0] })}
@@ -35,9 +36,9 @@ const EmailListForm = () => {
                         </div>
                     </form>
                     <div className="formButtonsEmail FieldsEmail">
-                        <div className="sendButton lowButtonEmails "
+                        <div className="backButton"
                             onClick={() => { push("/dashboard") }}
-                        >Back</div>
+                        ><Back fill={"#B1B1B1"} width={"50%"} height={"50%"}></Back></div>
                         <div className="createButton lowButtonEmails "
                             onClick={() => {
                                 console.log(emailListState.file, emailListState.name, store.getState().userData.id)
