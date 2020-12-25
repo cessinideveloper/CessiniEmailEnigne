@@ -1,0 +1,89 @@
+  .dash{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .subWrapper {
+    /* border: dotted; */
+    flex-shrink: 0;
+    flex-basis: 0;
+  }
+  .sideNavHolder {
+    flex-grow: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .sideButtons{
+    width: 110%;
+    position: relative;
+    left: -2%;
+    flex-basis: 10%;
+    background-color: rgb(23, 38, 74);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: 14px;
+  }
+  
+  .cessiniHolder {
+    flex-grow: 1;
+  }
+  .cessiniSVG {
+    width: 120%;
+    position: relative;
+    top: -10%;
+    left: -3%;
+  }
+  .contentHolder {
+    flex-grow: 14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .dashBody {
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0;
+  }
+  
+  .topNav {
+    flex-grow: 1;
+    flex-basis: 0;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .dashBodyMain {
+    flex-grow: 14;
+    display: flex;
+    
+  }
+  
+  .midButtons {
+    flex-basis: 20%;
+    margin: 2%;
+    height: 8%;
+    background-color: rgb(23, 38, 74);
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  
+  

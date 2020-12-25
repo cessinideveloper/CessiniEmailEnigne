@@ -49,7 +49,7 @@ const TwoLists = () => {
 
     return (
         <>
-            <div className="topNavLander  subWrapper">
+            <div className="topNavCam  subWrapper">
                 <animated.div className="logOff"
                     ref={logOffButtonRef}
                     style={logoffButtonStyle}

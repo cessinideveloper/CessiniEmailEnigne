@@ -20,16 +20,7 @@
     max-width: 420px;
 }
 
-.topNavLander {
-    flex-grow: 1;
-    flex-basis: 0;
-    background-color: whitesmoke;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
+
 
 .logOff{
     flex-wrap: nowrap;
@@ -42,7 +33,9 @@
     color: white;
     max-height: 40px;
     border-radius: 20px;
-    
+    position: relative;
+    left: 44%;
+    top:12%;
 }
 
 /* .logOff>svg{

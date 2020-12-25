@@ -13,7 +13,7 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: var(--light);
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -36,6 +36,9 @@
 
 .cessiniHolder {
   flex-grow: 1;
+  display:flex;
+  justify-content: center;
+  align-content: center;
 }
 .cessiniSVG {
   width: 120%;
