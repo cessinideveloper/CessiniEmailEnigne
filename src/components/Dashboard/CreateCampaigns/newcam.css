@@ -6,12 +6,12 @@
 
 
 
-  .dashBodyMainCam {
+  /* .dashBodyMainCam {
     flex-grow: 14;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } */
 
   .topButtonsCam {
     height: 80% ;

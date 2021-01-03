@@ -21,7 +21,7 @@ const DashBoard = () => {
 
     return (
         <div className={`coolBackground ${dashStyle.dash}`}>
-            <div className="sideNavHolder subWrapper">
+            <div className={`${dashStyle.sideNavHolder}`}>
                 <div className="cessiniHolder  subWrapper">
                     <Icon style={{ width: "40%", position: "relative", top: "30%" }}></Icon>
                 </div>
@@ -44,7 +44,7 @@ const DashBoard = () => {
                     > Create Campaign</animated.div>
                 </div>
             </div>
-            <div className="dashBody      subWrapper">
+            <div className={`${dashStyle.dashBody}`}>
                 <Switch>
                     <Route path="/dashboard/newcamp" render={() =>
                         <NewCam></NewCam>

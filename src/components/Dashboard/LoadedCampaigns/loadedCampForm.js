@@ -6,6 +6,7 @@ import { useSpring, animated } from 'react-spring'
 import axios from 'axios'
 import campStyle from '../../../css_modules/form.module.css'
 import Back from '../../../assets/LeftArrow'
+import Add from '../../../assets/Add'
 
 const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, loaded, setLoaded }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -43,11 +44,7 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
     return (
         <>
             <div className="topNavCam  subWrapperCam">
-                <div className="backButton"
-                    onClick={() => push("/dashboard")}
-                >
-                    <Back fill={"#ffffff"} width={"50%"} height={"50%"}></Back>
-                </div>
+
 
             </div>
             <div className="dashBodyMainCam  subWrapperCam">
@@ -82,12 +79,19 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                             </div>
                             <div className="subField Fields">
                                 <label htmlFor="emailList">Email Attachment</label>
-
-                                <input type="file" id="emailList"
+                                <div>
+                                    {newCampaignData.emailAttachment ?
+                                        <div>{newCampaignData.emailAttachment.name}</div> :
+                                        <Add height="80%" />}
+                                    <input type="file" id="emailList"
+                                        onChange={e => setNewCampaignData({ ...newCampaignData, emailAttachment: e.target.files[0] })}
+                                    />
+                                </div>
+                                {/* <input type="file" id="emailList"
                                     onChange={e => setNewCampaignData({ ...newCampaignData, attachment: e.target.files[0] })}
-                                />
+                                /> */}
                             </div>
-                            <div className="subField Fields">
+                            <div className="subField">
                                 <label htmlFor="emailLists">Email List</label>
                                 {console.log(newCampaignData.camp_emails)}
                                 <select id="emailLists" name="emailLists" value={newCampaignData.camp_emails}
@@ -117,13 +121,17 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                         </div>
                     </form>
                     <div className="formButtons Fields">
+                        <div className="backButton"
+                            onClick={() => push("/dashboard")}
+                        >
+                            <Back fill={"#B1B1B1"} width={"50%"} height={"50%"}></Back>
+                        </div>
                         <animated.div className="sendButton Fields formButtonsCam"
                             style={upNsendButtonStyle}
                             onClick={() => {
                                 //Updating
                                 setUpNsendButtonStyle({ transform: "scaleX(1)", text: "Updating...", backgroundColor: "#389685ff" })
                                 setTimeout(() => {
-                                    //console.log(newCampaignData.ht)
                                     let dataForm = new FormData
                                     let Jda = JSON.stringify(newCampaignData.temp_json)
                                     dataForm.append("name", newCampaignData.name)
@@ -157,24 +165,14 @@ const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, 
                                             console.log("reached er")
                                             if (er.response) {
                                                 console.log(er.response.data)
-                                                // if (er.response.status === 500) {
-                                                //     document.getElementsByClassName("addEmailList topButtonsCam subWrapperCam")[0].click()
-                                                //     // axios.post("https://emailengine2020.herokuapp.com/newcampaign/", dataForm).then(res => res.data)
-                                                // }
                                             }
                                         }
                                         )
 
                                 }, 0)
-                                //only send
-                                // setUpNsendButtonStyle({ text: "Sending...", backgroundColor: "#389685ff" })
-                                // axios.post(`https://emailengine2020.herokuapp.com/campid/${newCampaignData.id}/`).then(res => {
-                                //     setTimeout(() => { setUpNsendButtonStyle({ text: "Sent!", backgroundColor: "#656565ff" }) }, 1000)
-                                //     setTimeout(() => { push('/dashboard') }, 1300)
-                                // })
                             }}
                         >
-                            {upNsendButtonStyle.text}{/* {update ? "Update & Send" : "Save & Send"} */}
+                            {upNsendButtonStyle.text}
                         </animated.div>
                         <animated.div className="createButton Fields formButtonsCam"
                             style={upNexitButtonStyle}

@@ -5,6 +5,7 @@ import { storeCampaign } from '../../../actions'
 import axios from 'axios'
 import campStyle from '../../../css_modules/form.module.css'
 import Back from '../../../assets/LeftArrow'
+import Add from '../../../assets/Add'
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -21,18 +22,8 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const { push } = useHistory(null)
     return (
         <>
-            <div className="topNavCam  subWrapperCam">
-                {/* <div className="createCamp   topButtonsCam subWrapperCam"
-                    onClick={() => push("/dashboard")}
-                >
-                    Back
-                </div> */}
-                {/* <div className="addEmailList topButtonsCam subWrapperCam">
-                    <p>Save & Next</p>
-                </div> */}
-
-            </div>
-            <div className="dashBodyMainCam  subWrapperCam">
+            <div className="topNavCam"></div>
+            <div className="dashBodyMainCam">
                 <div className={`${campStyle.camFormHolder}`}>
                     <form className="formFields  Fields">
                         <div className="leftFields Fields">
@@ -62,11 +53,17 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
                                     onChange={e => setNewCampaignData({ ...newCampaignData, senderEmail: e.target.value })}
                                 />
                             </div>
-                            <div className="subField Fields">
+                            <div className="subField Attachment">
                                 <label htmlFor="emailList">Email Attachment</label>
-                                <input type="file" id="emailList"
-                                    onChange={e => setNewCampaignData({ ...newCampaignData, emailAttachment: e.target.files[0] })}
-                                />
+                                <div>
+                                    {newCampaignData.emailAttachment ?
+                                        <div>{newCampaignData.emailAttachment.name}</div> :
+                                        <Add height="80%" />}
+                                    <input type="file" id="emailList"
+                                        onChange={e => setNewCampaignData({ ...newCampaignData, emailAttachment: e.target.files[0] })}
+                                    />
+                                </div>
+
                             </div>
                             <div className="subField Fields">
                                 <label htmlFor="emailLists">Email List</label>

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { HashRouter, MemoryRouter } from 'react-router-dom'
+import { HashRouter, MemoryRouter, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.Fragment>
-    <MemoryRouter>
+    <BrowserRouter>
       <App></App>
-    </MemoryRouter>
+    </BrowserRouter>
   </React.Fragment>,
   document.getElementById('root')
 );

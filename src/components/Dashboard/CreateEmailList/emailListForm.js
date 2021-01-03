@@ -5,6 +5,7 @@ import axios from 'axios'
 import store from '../../../store/store'
 import { addEmailList } from '../../../actions'
 import Back from '../../../assets/LeftArrow'
+import Add from '../../../assets/Add'
 
 const EmailListForm = () => {
     const [emailListState, setEmailListState] = useState({ name: "", file: "" })
@@ -18,7 +19,7 @@ const EmailListForm = () => {
             <div className="dashBodyMainCam  subWrapperCam">
                 <div className="camFormHolderEmail">
                     <form className="formFieldsEmail  FieldsEmail">
-                        <div className="subFormEmail">
+                        <div className="field">
                             <div className="subField">
                                 <label htmlFor="emailName">File Name</label>
                                 <input type="text" id="emailName" name="emailName"
@@ -26,12 +27,15 @@ const EmailListForm = () => {
                                 />
                             </div>
                         </div>
-                        <div className="subFormEmail">
+                        <div className="field">
                             <div className="subField">
                                 <label htmlFor="emailFile">Upload File</label>
-                                <input type="file" id="emailFile" name="emailFile"
-                                    onChange={e => setEmailListState({ ...emailListState, file: e.target.files[0] })}
-                                />
+                                <div>
+                                    {emailListState.file ? <div>{emailListState.file.name}</div> : <Add height="80%" />}
+                                    <input type="file" id="emailFile" name="emailFile"
+                                        onChange={e => setEmailListState({ ...emailListState, file: e.target.files[0] })}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </form>

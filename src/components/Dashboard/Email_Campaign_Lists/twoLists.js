@@ -107,7 +107,7 @@ const TwoLists = () => {
                 </animated.div>
 
             </div>
-            <div className="dashBodyMain  subWrapper">
+            <div className="dashBodyMainCam  subWrapper">
                 <div className="leftDash  subDash">
                     <div className="contentholder">
                         <div className="contentButtons">
