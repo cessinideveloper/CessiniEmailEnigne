@@ -6,6 +6,7 @@ import store from '../../../store/store'
 import { addEmailList } from '../../../actions'
 import Back from '../../../assets/LeftArrow'
 import Add from '../../../assets/Add'
+import EmailList from './emailList'
 
 const EmailListForm = () => {
     const [emailListState, setEmailListState] = useState({ name: "", file: "" })
@@ -56,6 +57,7 @@ const EmailListForm = () => {
                         >Save</div>
                     </div>
                 </div>
+                <EmailList></EmailList>
             </div>
         </>
     );
