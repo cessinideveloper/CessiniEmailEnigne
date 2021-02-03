@@ -3,7 +3,6 @@ import './index.css';
 import SignIn from './signIn/signIn'
 import SignUp from './signup/signUp'
 import { Route, Switch } from 'react-router-dom'
-import signInStye from '../../css_modules/sign.module.css'
 
 function SignMain() {
 
@@ -31,10 +30,9 @@ function SignMain() {
     }
 
     return (
-        <div className="wrapper">
-            <div className={`${signInStye.signInBox} whiteBox `}>
+        <>
                 <Switch>
-                    <Route path="/signup" render={() =>
+                    <Route exact path="/signup" render={() =>
                         <SignUp setUserName={setUserName}
                         ></SignUp>
                     }></Route>
@@ -47,10 +45,10 @@ function SignMain() {
                         ></SignIn>
                     }></Route>
                 </Switch>
+        </>
+                
 
 
-            </div>
-        </div>
     )
 }
 

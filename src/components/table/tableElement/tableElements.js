@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Campaign from './campaign'
-import store from '../../../store/store'
+import TableElement from './tableElement';
 import { cleanup } from '@testing-library/react';
+import store from '../../../store/store'
 
-const Campaigns = () => {
+ const TableElements = ()=>{
     const [camps, setCamps] = useState(null)
-
 
     useEffect(() => {
         const unsubscribe = store.subscribe(() => setCamps(store.getState().campaigns))
@@ -15,16 +14,14 @@ const Campaigns = () => {
         return cleanup
     })
 
-
-    console.log(camps);
     return (
-        <div className="subContentActual">
-            {camps ? camps.map(camp => <Campaign
-                key={camp.id}
-                campId={camp.id}
-                campName={camp.name}></Campaign>) : null}
-        </div>
-    );
+        <>
+        {camps? camps.map(camp =><TableElement
+        key={camp.id}
+        campId={camp.id}
+        campName={camp.name}
+        ></TableElement> ):null}
+        </>
+    )
 }
-
-export default Campaigns;
+export default TableElements;

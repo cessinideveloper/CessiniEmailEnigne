@@ -58,6 +58,7 @@ export function* watchCampAdd() {
 export function* getEmailList(payload) {
     const allEmailList = yield call(fetchEmaillist)
     console.log(allEmailList)
+    console.log(payload)
     const filteredEmailList = allEmailList.filter(emailList => emailList.my_customer == payload)
     console.log(filteredEmailList)
     yield put(storeAllEmailList(filteredEmailList))

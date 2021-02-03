@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import listStyle from '../../../css_modules/lists.module.css'
 import EmailElement from './emailElement'
 import store from '../../../store/store'
 
@@ -17,18 +16,17 @@ const EmailList = () => {
 
     const emptyText = lists ? lists.length == 0 ? <p>Email List is empty</p> : null : null
 
-    console.log(emptyText)
+    console.log(emptyText);
+    console.log('Hi');
     return (
-        <div className={`${listStyle.wrapper}`}>
-            <div className={`${listStyle.subWrapper}`}>
-                {emptyText ? <p>{emptyText}</p> :
-                    <div className={`${listStyle.subSubWrapper}`}>
+        <div className="emailList">
+            {emptyText ? <p>{emptyText}</p> :
+                    <div className="emailElements">
                         {lists ? lists.map(list =>
                             <EmailElement key={list.id} emailId={list.id} listName={list.name} file={list.upload_file} ></EmailElement>
                         ) : null}
                     </div>
                 }
-            </div>
         </div>
     )
 }

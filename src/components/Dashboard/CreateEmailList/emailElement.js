@@ -3,32 +3,27 @@ import React from 'react';
 import axios from 'axios'
 import { deleteEmailList } from '../../../actions'
 import store from '../../../store/store'
-import listStyle from '../../../css_modules/lists.module.css'
-import DeleteIcon from '../../../assets/Trash'
 
 const EmailElement = ({ emailId, listName, file }) => {
 
     return (
-        <div className={`${listStyle.elementWrapper}`}>
-            <div className={`${listStyle.campNameEmail}`}>
-                <div>{listName}</div>
-            </div>
-            <div className={`${listStyle.listButton}`}
+        <>
+        <div className="emailElementBody">
+                <div className="item">{listName}</div>
+                <div className="item">
+                    <button class="button"
                 onClick={() => {
                     axios.delete(`https://emailengine2020.herokuapp.com/emailrud/${emailId}/`)
                         .then(
                             res => {
-                                console.log(res)
-                                store.dispatch(deleteEmailList(emailId))
-                            }
-
-                        )
-                }}
-            >
-                <DeleteIcon width="15%" fill="white"></DeleteIcon>
-            </div>
-
+                            console.log(res);
+                            store.dispatch(deleteEmailList(emailId))}
+                            )}}>Delete</button>
+                </div>
         </div>
+        
+        </>
+        
     );
 }
 
