@@ -1,19 +1,25 @@
 import React from 'react'
 import './sidebar.css'
-import { Link, useHistory } from "react-router-dom";
-
+import {Button} from 'react-bootstrap';
+import {Link, useHistory} from 'react-router-dom';
 
 const Sidebar = ()=>{
-    const { push } = useHistory(null);
-    return(
-        <div className="sidebar">
-            <Link to="/dashboard" className="item"> Dashboard </Link>
-            <Link to="/dashboard/newcamp" className="item">Create Campaign</Link>
-            <Link to="/dashboard/newemaillist" className="item">Create EmailList</Link>
-            <Link onClick={(e) => {push("/");
-            localStorage.clear()}} className="item">Logout</Link>
-        </div>
-    );
+    const {push} = useHistory(null);
+    return (
+        
+                <div className="sidebar-sticky">
+                    <div className="sidebar-content">
+                    <ul className="nav flex-column">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/dashboard/newcamp"><Button variant="secondary">Create Campaign</Button></Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/dashboard/newemaillist"><Button variant="secondary">Create EmailList</Button></Link>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                
+    )
 }
-
-export default Sidebar
+export default Sidebar;

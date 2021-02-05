@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './table.css'
+// import './table.css'
 import Tableheader from './tableHeader/tableHeader'
 import Tableelements from './tableElement/tableElements'
 import store from '../../store/store'
+import Tables from 'react-bootstrap/Table'
 import { storeUserRequest, getAllEmailList } from '../../actions'
 
 const Table = ()=>{
@@ -27,10 +28,10 @@ const Table = ()=>{
         <div className="table-div">
         <h2>Responsive Table</h2>
             <div className="table-wrapper">
-                <table className="fl-table">
+                <Tables striped bordered hover variant="dark">
                     <Tableheader></Tableheader>
                     <Tableelements></Tableelements>
-                </table>
+                </Tables>
             </div>
         </div>
         

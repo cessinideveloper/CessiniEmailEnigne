@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import useModal from './useModal';
 import './modal.css'
 import { useHistory,Link } from 'react-router-dom'
 import store from '../../store/store'
 import { addEmailList } from '../../actions'
+import {Modal, Button} from 'react-bootstrap'
 
 
-const Modal = ({ isShowing, hide }) => {
-  const [emailListState, setEmailListState] = useState({ name: "", file: "" })
+const ModalBody = ({ isShowing, hide }) => {
+  const [emailListState, setEmailListState] = useState({ name: "", file: "" });
+  const [show, setShow] = useState(false);
   const { push } = useHistory(null)
   
   return(
     <>
-      {isShowing ? ReactDOM.createPortal(
-        <React.Fragment>
-          <div className="modal-overlay"/>
-          <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
-            <div className="modal">
-              
-                <div className="form1">
+    <div className="modalBody">
+      <Button size="sm" variant="primary" onClick={() => setShow(true)}>
+        Create Mail List
+      </Button>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        dialogClassName="modal-90w"
+        aria-labelledby="example-custom-modal-styling-title">
+        <Modal.Header closeButton>
+          <Modal.Title id="example-custom-modal-styling-title">
+            Create Mail List
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div className="form1">
                   <form className="login-form">
                       <span className="heading">Name of List</span>
                         <input type="text" id="emailName" name="emailName" placeholder="username"
@@ -37,21 +47,15 @@ const Modal = ({ isShowing, hide }) => {
                         store.dispatch(addEmailList(formData))
                         push('/dashboard')}} >Create</button>
                   </form>
-                </div>
-              <div className="modal-header">
-                <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            </div>
-            
-          </div>
-        </React.Fragment>, document.body
-      ) : null}
+                  </div>
+        </Modal.Body>
+      </Modal>
+    </div>
+      
     </>
     
   )
   
 }
 
-export default Modal;
+export default ModalBody;

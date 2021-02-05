@@ -6,10 +6,10 @@ export default function tableHeader() {
     return (
         <thead>
             <tr>
-                <th>Campain Name</th>
-                <th>Edit</th>
-                <th>Delete</th>
+            <th>#</th>
+            <th>Edit</th>
+            <th>Delete</th>
             </tr>
-        </thead>
+    </thead>
     )
 }

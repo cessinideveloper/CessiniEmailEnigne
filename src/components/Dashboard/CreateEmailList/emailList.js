@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import EmailElement from './emailElement'
 import store from '../../../store/store'
+import Table from 'react-bootstrap/Table'
+
+
+
+
 
 const EmailList = () => {
 
@@ -21,11 +26,11 @@ const EmailList = () => {
     return (
         <div className="emailList">
             {emptyText ? <p>{emptyText}</p> :
-                    <div className="emailElements">
+                    <Table striped bordered hover variant="dark">
                         {lists ? lists.map(list =>
                             <EmailElement key={list.id} emailId={list.id} listName={list.name} file={list.upload_file} ></EmailElement>
                         ) : null}
-                    </div>
+                    </Table>
                 }
         </div>
     )

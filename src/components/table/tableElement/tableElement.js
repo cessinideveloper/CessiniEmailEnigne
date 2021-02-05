@@ -3,7 +3,7 @@ import store from '../../../store/store'
 import { useHistory } from 'react-router-dom'
 import { loadCampaign, deleteCamp } from '../../../actions'
 import axios from 'axios';
-import './tableElement.css'
+import {Button} from 'react-bootstrap';
 
 const TableElement = ({ campId, campName })=>{
     const { push } = useHistory(null)
@@ -12,14 +12,14 @@ const TableElement = ({ campId, campName })=>{
         <tbody>
             <tr>
                 <td>{campName}</td>
-                <td><button class="button"
+                <td><Button variant="warning" className="button"
                     onClick={() => {
                     store.dispatch(loadCampaign({ campId, campName }));
                     push("/dashboard/loadedcamp")}}
-                >Edit</button>
+                >Edit</Button>
                 </td>
 
-                <td><button class="button"
+                <td><Button variant="danger" className="button"
                 onClick={() => {
                     axios.delete(`https://emailengine2020.herokuapp.com/camprud/${campId}/`)
                         .then(
@@ -30,7 +30,7 @@ const TableElement = ({ campId, campName })=>{
                         )
 
 
-                }}>Delete</button></td>
+                }}>Delete</Button></td>
             </tr>
         </tbody>
     )

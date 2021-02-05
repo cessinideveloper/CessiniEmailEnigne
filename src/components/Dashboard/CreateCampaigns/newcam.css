@@ -134,6 +134,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 2;
     
   }
   .form2 {
@@ -141,8 +142,8 @@
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
-    /* margin: 0 auto 100px; */
-    /* padding: 45px; */
+    margin: 0 auto 100px;
+    padding: 45px;
     text-align: center;
     justify-content: center;
     align-items: center;

@@ -15,12 +15,9 @@ function App() {
   return (
     <div className="primaryWindow">
       <Switch>
-        <Route exact path="/dashboard"  render={() => <DashBoard></DashBoard>}></Route>
-        <Route path="/dashboard/newcamp" render={() =><NewCam></NewCam>}></Route>
-        <Route path="/dashboard/loadedcamp" render={() =><LoadedCamp></LoadedCamp>}></Route>
-        <Route path="/dashboard/newemaillist" render={() => <EmailListForm></EmailListForm>}></Route>
-        
-        <Route path="/" render={() => <SignMain></SignMain>}></Route>
+      <Route exact path="/" render={() => <SignMain></SignMain>}></Route>
+      <Route path="/dashboard"  render={() => <DashBoard></DashBoard>}></Route>
+      
 
       </Switch>
     </div>

@@ -9,7 +9,6 @@ import Back from '../../../assets/LeftArrow'
 import LoadedCampForm from './loadedCampForm'
 
 const LoadedCamp = () => {
-
     const initialState = {
         senderName: "",//string
         senderEmail: "",//string
@@ -26,6 +25,9 @@ const LoadedCamp = () => {
     const { push } = useHistory(null)
 
     const emailEditorRef = useRef(null);
+    
+    
+    
 
 
 
@@ -45,9 +47,7 @@ const LoadedCamp = () => {
                 <>
                     <div className="topNavCam  subWrapperCam">
                         <div className="backButton"
-                            onClick={() => push("/dashboard/loadedcamp")}
-
-                        >
+                            onClick={() => push("/dashboard/loadedcamp")}>
                             <Back fill={"#ffffff"} width={"50%"} height={"50%"}></Back>
                         </div>
                         <div className="addEmailList topButtonsCam subWrapperCam"

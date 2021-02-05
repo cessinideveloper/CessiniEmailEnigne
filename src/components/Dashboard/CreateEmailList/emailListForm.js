@@ -5,29 +5,21 @@ import axios from 'axios'
 import store from '../../../store/store'
 import { addEmailList } from '../../../actions'
 import EmailList from './emailList'
-import Navbar from '../../navbar/navbar'
-import Modal from '../../modal/modal'
-import useModal from '../../modal/useModal'
+import Navbar from '../../navbar/NavigationBar'
 import Button from '../../button/button'
-import Sidebar from '../../sidebar/sidebar'
-
+import Model from '../../modal/modal'
 const EmailListForm = () => {
-    const {isShowing, toggle} = useModal();
     
-
+    console.log("ABHIJIT...");
     return (
         <>
-            <Sidebar></Sidebar>
-            <div className="modal">
-                <Button className="modalButton" toggle={toggle}>Create MailList</Button>
-            </div>
-            <Modal
-                isShowing={isShowing}
-                hide={toggle} />
-            <hr></hr>
+           <div className="emailBody">
+           <Model></Model>
 
             {/* User input ans file upload section begine */}
             <EmailList></EmailList>
+           </div>
+            
         </>
     );
 }

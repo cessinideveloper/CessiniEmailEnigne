@@ -6,8 +6,8 @@ import axios from 'axios'
 import Back from '../../../assets/LeftArrow'
 import Add from '../../../assets/Add'
 import './newcam.css'
-import Navbar from '../../navbar/navbar'
-import Sidebar from '../../sidebar/sidebar';
+import Navbar from '../../navbar/NavigationBar'
+import Sidebar from '../../sidebar/Sidebar';
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])
@@ -25,20 +25,19 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const { push } = useHistory(null)
     return (
         <>
-        <Sidebar></Sidebar>
         <div className="container1">
             <div className="form2">
                   <form className="login-form">
                         <span className="heading">Campaign Name</span>
-                        <input type="text" value={newCampaignData.campName} id="emailName" name="emailName" placeholder="username"
+                        <input type="text"  id="emailName" name="emailName" placeholder="username"
                         onChange={e => setNewCampaignData({ ...newCampaignData, campName: e.target.value })} />
                         <span className="heading">Sender Mail</span>
-                        <input type="text" value={newCampaignData.emailSub} id="emailName" name="emailName" placeholder="username"
+                        <input type="text"  id="emailName" name="emailName" placeholder="username"
                         onChange={e => setNewCampaignData({ ...newCampaignData, emailSub: e.target.value })} />
                       
                       
                         <span className="heading">Sender Name</span>
-                        <input type="text" value={newCampaignData.senderName}  id="emailName" name="emailName" placeholder="username"
+                        <input type="text"   id="emailName" name="emailName" placeholder="username"
                         onChange={e => setNewCampaignData({ ...newCampaignData, senderName: e.target.value })} />
                         <span className="heading">Email Attachment</span>
                         <input type="file" id="emailName" name="emailName" placeholder="username"
@@ -46,7 +45,7 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
                       
                       
                         <span className="heading">Email Subject</span>
-                        <input type="text" value={newCampaignData.emailSub} id="emailName" name="emailName" placeholder="username"
+                        <input type="text"  id="emailName" name="emailName" placeholder="username"
                         onChange={e => setNewCampaignData({ ...newCampaignData, emailSub: e.target.value })} />
                         <span className="heading">Email List</span>
                         <select id="camName" name="camName"
@@ -66,5 +65,6 @@ const CampForm = ({ newCampaignData, setNewCampaignData }) => {
         </>
     );
 }
+
 
 export default CampForm;
