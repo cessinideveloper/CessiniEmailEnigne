@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import './dashboard.css'
 import Navbar from '../navbar/NavigationBar'
 import Table from '../table/table'
-import Sidebar from "../sidebar/Sidebar";
+import Sidebar from "../sidebar/sidebar";
 import NewCam from '../Dashboard/CreateCampaigns/campaignForm';
 import LoadedCamp from '../Dashboard/LoadedCampaigns/loadedCampaign';
 import EmailListForm from '../Dashboard/CreateEmailList/emailListForm'
