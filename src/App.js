@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import './App.css';
 
+//Code Spliting
 const SignMain = React.lazy(() => import('./components/signInPage'));
 const Dashboard = React.lazy(() => import ('./components/Dashboard/dashBoard'));
 
