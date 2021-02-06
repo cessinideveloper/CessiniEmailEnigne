@@ -1,15 +1,17 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-
 import './dashboard.css'
 import Navbar from '../navbar/NavigationBar'
-import Table from '../table/table'
-import Sidebar from "../sidebar/Sidebar";
-import NewCam from '../Dashboard/CreateCampaigns/campaignForm';
-import LoadedCamp from '../Dashboard/LoadedCampaigns/loadedCampaign';
-import EmailListForm from '../Dashboard/CreateEmailList/emailListForm'
+import Sidebar from "../sidebar/sidebar";
+
+//Code Spliting
+const Table = React.lazy(() => import('../table/table'));
+const NewCamp = React.lazy(() => import('../Dashboard/CreateCampaigns/campaignForm'));
+const LoadedCamp = React.lazy(() => import('../Dashboard//LoadedCampaigns/loadedCampaign'));
+const EmailListForm = React.lazy(() => import('../Dashboard/CreateEmailList/emailListForm'));
+
 
 const DashBoard = () => {
 
@@ -24,12 +26,22 @@ const DashBoard = () => {
                 <Navbar></Navbar>
                 <div className="item2">
                     <Sidebar className="sidebar"></Sidebar>
-                    <Switch>
-                        <Route path="/dashboard/newcamp" component={NewCam}></Route>
-                        <Route path="/dashboard/loadedcamp" component={LoadedCamp}></Route>
-                        <Route path="/dashboard/newemaillist" component={EmailListForm}></Route>
-                        <Route render={()=> <Table className="table"></Table> }></Route>  
-                    </Switch> 
+                    <Suspense fallback={<p>Loading.....</p>}>
+                        <Switch>
+                            <Route exact path="/dashboard">
+                                <Table />
+                            </Route>
+                            <Route path="/dashboard/newcamp">
+                                <NewCamp />
+                            </Route>
+                            <Route path="/dashboard/loadedcamp">
+                                <LoadedCamp />
+                            </Route>
+                            <Route path="/dashboard/newemaillist">
+                                <EmailListForm />
+                            </Route>
+                        </Switch> 
+                    </Suspense>
                 </div>
             </div>
                 

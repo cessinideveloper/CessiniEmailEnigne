@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './newcam.css'
+import '../CreateCampaigns/newcam.css'
 import { useFormik } from 'formik'
 import { useHistory } from 'react-router-dom'
 import { Route, Switch } from 'react-router-dom'

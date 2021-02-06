@@ -2,17 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom'
 import store from '../../../store/store'
 import { storeCampaign, updateCampaign } from '../../../actions'
-import { useSpring, animated } from 'react-spring'
 import axios from 'axios'
-import campStyle from '../../../css_modules/form.module.css'
 import Back from '../../../assets/LeftArrow'
 import Add from '../../../assets/Add'
 
 const LoadedCampForm = ({ newCampaignData, setNewCampaignData, loadTheTemplate, loaded, setLoaded }) => {
     const [emailCSV, setEmailCSV] = useState([])
-
-    const [upNexitButtonStyle, setUpNexitButtonStyle] = useSpring(() => ({ text: "Update & Exit", backgroundColor: "#365194ff" }))
-    const [upNsendButtonStyle, setUpNsendButtonStyle] = useSpring(() => ({ text: "Update & Send", backgroundColor: "#365194ff" }))
 
     useEffect(() => {
         const loadedCamp = store.getState().loadedCampaign ? store.getState().loadedCampaign.campId : null
