@@ -12,7 +12,6 @@ const NewCamp = React.lazy(() => import('../Dashboard/CreateCampaigns/campaignFo
 const LoadedCamp = React.lazy(() => import('../Dashboard//LoadedCampaigns/loadedCampaign'));
 const EmailListForm = React.lazy(() => import('../Dashboard/CreateEmailList/emailListForm'));
 
-
 const DashBoard = () => {
 
     const { push } = useHistory(null)
