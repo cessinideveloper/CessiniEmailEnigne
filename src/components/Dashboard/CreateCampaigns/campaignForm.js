@@ -7,7 +7,7 @@ import Back from '../../../assets/LeftArrow'
 import Add from '../../../assets/Add'
 import './newcam.css'
 import Navbar from '../../navbar/NavigationBar'
-import Sidebar from '../../sidebar/Sidebar';
+
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])
