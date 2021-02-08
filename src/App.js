@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import NewCamp from './components/Dashboard/CreateCampaigns/newCam';
 
+//Code Spliting
 const SignMain = React.lazy(() => import('./components/signInPage'));
 const Dashboard = React.lazy(() => import ('./components/Dashboard/dashBoard'));
 
