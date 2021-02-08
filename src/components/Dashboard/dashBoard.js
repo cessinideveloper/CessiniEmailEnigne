@@ -27,10 +27,7 @@ const DashBoard = () => {
                     <Sidebar className="sidebar"></Sidebar>
                     <Suspense fallback={<p>Loading.....</p>}>
                         <Switch>
-                            <Route exact path="/dashboard">
-                                <Table />
-                            </Route>
-                            <Route path="/dashboard/newcamp">
+                            <Route exact path="/dashboard/newcamp">
                                 <NewCamp />
                             </Route>
                             <Route path="/dashboard/loadedcamp">
@@ -38,6 +35,9 @@ const DashBoard = () => {
                             </Route>
                             <Route path="/dashboard/newemaillist">
                                 <EmailListForm />
+                            </Route>
+                            <Route exact path="/dashboard">
+                                <Table />
                             </Route>
                         </Switch> 
                     </Suspense>

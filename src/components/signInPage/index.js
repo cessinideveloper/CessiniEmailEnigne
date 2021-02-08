@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import './index.css';
-import SignIn from './signIn/signIn'
-import SignUp from './signup/signUp'
 import { Route, Switch } from 'react-router-dom'
+import SignUp from './signup/signUp';
 
+
+const SignIn = React.lazy(() => import('./signIn/signIn'));
+const SingUp = React.lazy(() => import('./signup/signUp'));
 function SignMain() {
 
     const [userData, setUserData] = useState({
@@ -31,20 +33,21 @@ function SignMain() {
 
     return (
         <>
+            <Suspense fallback={<p>Loading......</p>}>
                 <Switch>
-                    <Route exact path="/signup" render={() =>
-                        <SignUp setUserName={setUserName}
-                        ></SignUp>
-                    }></Route>
-                    <Route exact path="/" render={() =>
-                        <SignIn userData={userData}
+                    
+                    <Route path="/">
+                    <SignIn userData={userData}
                             setUserName={setUserName}
                             setPassWord={setPassWord}
                             setEmail={setEmail}
-                            setId={setId}
-                        ></SignIn>
-                    }></Route>
+                            setId={setId}/>
+                    </Route>
+                    <Route path="/signup" >
+                        <SignUp />
+                    </Route>
                 </Switch>
+            </Suspense>
         </>
                 
 
