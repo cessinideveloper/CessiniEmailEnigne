@@ -28,10 +28,9 @@ const NewCam = () => {
 
     return (
         <>
-        <div className="header">
+        
         <Navbar></Navbar>
             <Switch>
-
                 <Route path="/dashboard/newcamp/maileditor" render={() =>
                 <>
                 <div className="navButton">
@@ -133,7 +132,7 @@ const NewCam = () => {
                     ></CampForm>}>
                 </Route>
             </Switch>
-        </div>
+        
        
         </>
         

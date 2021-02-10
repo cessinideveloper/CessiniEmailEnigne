@@ -6,6 +6,7 @@ import axios from 'axios'
 import Back from '../../../assets/LeftArrow'
 import Add from '../../../assets/Add'
 import './newcam.css'
+import Navbar from '../../navbar/NavigationBar'
 
 const CampForm = ({ newCampaignData, setNewCampaignData }) => {
     const [emailCSV, setEmailCSV] = useState([])

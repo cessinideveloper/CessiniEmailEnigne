@@ -35,7 +35,9 @@ function SignMain() {
         <>
             <Suspense fallback={<p>Loading......</p>}>
                 <Switch>
-                    
+                    <Route path="/signup" >
+                        <SignUp />
+                    </Route>
                     <Route path="/">
                     <SignIn userData={userData}
                             setUserName={setUserName}
@@ -43,9 +45,7 @@ function SignMain() {
                             setEmail={setEmail}
                             setId={setId}/>
                     </Route>
-                    <Route path="/signup" >
-                        <SignUp />
-                    </Route>
+                   
                 </Switch>
             </Suspense>
         </>
